@@ -1,0 +1,32 @@
+pipeline 
+{
+    agent any
+
+    stages 
+    {
+        stage('Checkout') 
+        {
+            steps 
+            {
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                sh 'g++ -o my_program my_code.cpp'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                sh './my_program'
+            }
+        }
+        post{
+            faliure{
+                echo 'pipeline failed'
+            }
+        }
+    }
+}
