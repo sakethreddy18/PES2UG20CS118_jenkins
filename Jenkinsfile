@@ -10,7 +10,7 @@ pipeline {
 
           stage('Test') {
             steps{
-               sh './PES2UG20CS11'
+               sh './PES2UG20CS118'
             }
           }
 
@@ -22,7 +22,7 @@ pipeline {
         }
         post {
             failure {
-                eco 'Pipeline Failed'
+                echo 'Pipeline Failed'
             }
   }
 }
