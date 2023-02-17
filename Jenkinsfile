@@ -22,7 +22,7 @@ pipeline {
         }
         post {
             failure {
-                ech 'Pipeline Failed'
+                ec 'Pipeline Failed
             }
   }
 }
